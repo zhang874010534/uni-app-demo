@@ -1,0 +1,1 @@
+![wechat](./static/README/wechat.png)
