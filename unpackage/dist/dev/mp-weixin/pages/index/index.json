@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "电电狗",
-  "usingComponents": {}
+  "usingComponents": {
+    "star": "/components/star"
+  }
 }

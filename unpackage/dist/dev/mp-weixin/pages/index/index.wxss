@@ -61,26 +61,30 @@
 	   text-overflow: ellipsis;
 	text-align: center;
 }
-.movie-star{
+
+/* 热门电影 e */
+
+/* 热门预告s */
+.hot-trailer{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 0 20rpx;
 }
-.star-icon{
-	width: 20rpx;
-	height: 20rpx;
-	margin-top: 6rpx;
-}
-.star-score{
-	font-size:12px;
-	color: #bfbfbf;
-	margin-left: 6rpx;
+.hot-trailer-single{
+	width: 350rpx;
+	height: 220rpx;
 }
 
-/* 热门电影 e */
+/* 热门预告e */
 

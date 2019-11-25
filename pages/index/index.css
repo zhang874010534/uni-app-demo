@@ -51,18 +51,18 @@
 	text-overflow: ellipsis;
 	text-align: center;
 }
-.movie-star{
-	display: flex;
-	justify-content: center;
-}
-.star-icon{
-	width: 20rpx;
-	height: 20rpx;
-	margin-top: 6rpx;
-}
-.star-score{
-	font-size:12px;
-	color: #bfbfbf;
-	margin-left: 6rpx;
-}
+
 /* 热门电影 e */
+
+/* 热门预告s */
+.hot-trailer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 20rpx;
+}
+.hot-trailer-single{
+	width: 350rpx;
+	height: 220rpx;
+}
+/* 热门预告e */

@@ -14,40 +14,51 @@
 					热门电影
 				</view>
 			</view>
-			<scroll-view scroll-x="true" class="page-block hot-swiper">
-				<view class="hot-movie-content" v-for="(item,i) in movieList" :key="i">
-					<view class="single-movie">
-						<image :src="item.imgSrc" class="single-movie-img"></image>
-						<view class="movie-name">
-							{{item.name}}
-						</view>
-						<view class="movie-star">
-							<image src="../../static/index/star.png" class="star-icon"></image>
-							<image src="../../static/index/star.png" class="star-icon"></image>
-							<image src="../../static/index/star.png" class="star-icon"></image>
-							<image src="../../static/index/star.png" class="star-icon"></image>
-							<image src="../../static/index/star1.png" class="star-icon"></image>
-							<view class="star-score">
-								8.2分
-							</view>
-						</view>
-					</view>
-				</view>
-				
-				
-			</scroll-view>
 		</view>
+		<scroll-view scroll-x="true" class="page-block hot-swiper">
+			<view class="hot-movie-content" v-for="(item,i) in movieList" :key="i">
+				<view class="single-movie">
+					<image :src="item.imgSrc" class="single-movie-img"></image>
+					<view class="movie-name">
+						{{item.name}}
+					</view>
+					<star :fatherScore="item.score"></star>
+				</view>
+			</view>
+		</scroll-view>
 		<!-- 热门电影 e -->
+		
+		
+		<!-- 热门预告 s -->
+		<view class="page-block hot-movie">
+			<view class="hot-wrapper">
+				<image src="../../static/index/trailer.png"></image>
+				<view class="hot-title">
+					热门预告
+				</view>
+			</view>
+		</view>
+		<view class="page-block hot-trailer">
+			<video v-for="(item,i) in trailerList" :key="i" 
+			:src="item.video" controls
+			class="hot-trailer-single"
+			>
+				
+			</video>
+		</view>
+		<!-- 热门预告 e -->
+		
 	</view>
 </template>
 
 <script>
-	
+	import star from '../../components/star.vue'
 	export default {
 		data() {
 			return {
 				swiperList:[],
-				movieList:[]
+				movieList:[],
+				trailerList:[]
 			}
 		},
 		onLoad() { 
@@ -58,6 +69,7 @@
 			        this.swiperList=res.data.data;
 			    }
 			});
+			// 热门电影
 			uni.request({
 			    url:  this.$defaultUrl+'/index/movie.json', //仅为示例，并非真实接口地址。
 				method:'GET',
@@ -65,9 +77,21 @@
 			        this.movieList=res.data.data;
 			    }
 			});
+			
+			//热门预告
+			uni.request({
+			    url:  this.$defaultUrl+'/index/trailer.json', //仅为示例，并非真实接口地址。
+				method:'GET',
+			    success: (res) => {
+			        this.trailerList=res.data.data;
+			    }
+			});
 		},
 		methods: {
 
+		},
+		components:{
+			star
 		}
 	}
 </script>

@@ -131,56 +131,67 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var star = function star() {return __webpack_require__.e(/*! import() | components/star */ "components/star").then(__webpack_require__.bind(null, /*! ../../components/star.vue */ 35));};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {
   data: function data() {
     return {
       swiperList: [],
-      movieList: [] };
+      movieList: [],
+      trailerList: [] };
 
   },
   onLoad: function onLoad() {var _this = this;
@@ -191,6 +202,7 @@ var _default =
         _this.swiperList = res.data.data;
       } });
 
+    // 热门电影
     uni.request({
       url: this.$defaultUrl + '/index/movie.json', //仅为示例，并非真实接口地址。
       method: 'GET',
@@ -198,8 +210,21 @@ var _default =
         _this.movieList = res.data.data;
       } });
 
+
+    //热门预告
+    uni.request({
+      url: this.$defaultUrl + '/index/trailer.json', //仅为示例，并非真实接口地址。
+      method: 'GET',
+      success: function success(res) {
+        _this.trailerList = res.data.data;
+      } });
+
   },
-  methods: {} };exports.default = _default;
+  methods: {},
+
+
+  components: {
+    star: star } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
