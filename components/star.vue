@@ -33,7 +33,6 @@
 <style>
 .movie-star{
 	display: flex;
-	justify-content: center;
 }
 .star-icon{
 	width: 20rpx;

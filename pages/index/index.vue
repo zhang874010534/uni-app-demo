@@ -58,7 +58,27 @@
 				</view>
 			</view>
 		</view>
-		
+		<view class="guess-single">
+			<image src="https://s2.ax1x.com/2019/11/24/MLQKw4.png" class="guess-img"></image>
+			<view class="guess-content">
+				<view class="guess-title">
+					罗小黑战记
+				</view>
+				<star fatherScore="9.2"></star>
+				<view class="guess-info">
+					2019/冒险/动画/奇幻
+				</view>
+				<view class="guess-info">
+					山新/刘明月/郝祥海/夏侯落枫/叮当/图特哈蒙
+				</view>
+			</view>
+			<view class="guess-praise">
+				<image src="../../static/index/praise.png" class="praise-icon"></image>
+				<view class="praise-name">
+					点赞
+				</view>
+			</view>
+		</view>
 		<!-- 猜你喜欢e -->
 	</view>
 </template>
