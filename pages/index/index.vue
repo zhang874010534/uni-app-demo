@@ -6,7 +6,7 @@
 				<image :src="item.imgSrc" class="swiper"></image>
 			</swiper-item>
 		</swiper>
-		<!-- 热门电影 s -->
+		<!--  热门电影 s -->
 		<view class="page-block hot-movie">
 			<view class="hot-wrapper">
 				<image src="../../static/index/hot.png"></image>
@@ -48,6 +48,18 @@
 		</view>
 		<!-- 热门预告 e -->
 		
+		
+		<!-- 猜你喜欢s -->
+		<view class="page-block hot-movie">
+			<view class="hot-wrapper">
+				<image src="../../static/index/guess.png"></image>
+				<view class="hot-title">
+					猜你喜欢
+				</view>
+			</view>
+		</view>
+		
+		<!-- 猜你喜欢e -->
 	</view>
 </template>
 

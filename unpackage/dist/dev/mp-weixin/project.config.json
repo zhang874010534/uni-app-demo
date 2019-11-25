@@ -5,20 +5,8 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"es6": false,
 		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
+		"es6": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
