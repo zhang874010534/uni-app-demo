@@ -43,6 +43,7 @@
 				uni.navigateTo({
 					url:"../movie/movie?trailerId="+trailerId
 				})
+				
 			}
 		},
 		onReachBottom() {

@@ -176,6 +176,7 @@ var _default =
       uni.navigateTo({
         url: "../movie/movie?trailerId=" + trailerId });
 
+
     } },
 
   onReachBottom: function onReachBottom() {

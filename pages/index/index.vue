@@ -6,6 +6,7 @@
 				<image :src="item.imgSrc" class="swiper"></image>
 			</swiper-item>
 		</swiper>
+		
 		<!--  热门电影 s -->
 		<view class="page-block hot-movie">
 			<view class="hot-wrapper">
@@ -24,7 +25,7 @@
 					</view>
 					<star :fatherScore="item.score" class="star-center"></star>
 				</view>
-			</view>
+			</view> 
 		</scroll-view>
 		<!-- 热门电影 e -->
 		
