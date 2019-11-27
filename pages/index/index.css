@@ -37,6 +37,7 @@
 .single-movie{
 	display:flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100px;
 }
 .single-movie-img{
@@ -100,6 +101,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 150rpx;
+	border-left: 2px dashed #bfbfbf;
 }
 .praise-icon{
 	width: 40rpx;
@@ -108,5 +110,9 @@
 .praise-name{
 	font-size: 14px;
 	color: #fcb914;
+}
+.praise-animation{
+	font-weight: bold;
+	opacity: 0;
 }
 /* 猜你喜欢e */

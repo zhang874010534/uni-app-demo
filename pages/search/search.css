@@ -1,0 +1,36 @@
+.search-bar{
+	display: flex;
+	align-items: center;
+	margin-top: -3rpx;
+	padding: 0rpx 20rpx 20rpx 20rpx;
+	position: fixed;
+	z-index: 1;
+	
+}
+.search-icon{
+	width: 40rpx;
+	height: 40rpx;
+	background-color: #eaeaea;
+	padding: 6rpx;
+}
+.search-text{
+	width: 650rpx;
+	background-color: #eaeaea;
+	font-size: 14px;
+	height: 50rpx;
+}
+/* 搜索框结束 */
+
+/* 列表开始 */
+.search-content{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 65rpx 20rpx 10rpx;
+}
+.search-img{
+	width: 200rpx;
+	height: 266rpx;
+	padding: 10rpx 17rpx;
+}
+/* 列表结束 */
