@@ -223,6 +223,16 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   onLoad: function onLoad() {var _this = this;
+
+    //设置导航栏的颜色
+
+
+
+
+
+
+
+
     //创建一个animation动画实例对象
     this.animation = uni.createAnimation({});
 

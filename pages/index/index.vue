@@ -3,7 +3,7 @@
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="swiper">
 			<swiper-item v-for="(item,i) in swiperList" :key="i">
-				<image :src="item.imgSrc" class="swiper"></image>
+				<image :src="item.imgSrc" mode="aspectFill" class="swiper"></image>
 			</swiper-item>
 		</swiper>
 		
@@ -99,6 +99,16 @@
 			}
 		},
 		onLoad() { 
+			
+			//设置导航栏的颜色
+			// #ifdef APP-PLUS
+			uni.setNavigationBarColor({
+				frontColor:"#ffffff",
+				backgroundColor:"#000000"
+			})
+			// #endif
+			
+			
 			//创建一个animation动画实例对象
 			this.animation=uni.createAnimation({
 				
