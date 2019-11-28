@@ -1,0 +1,1 @@
+<view class="wrapper"><image src="{{imgUrl}}" mode="widthFix" data-event-opts="{{[['longpress',[['actionSheet',['$event']]]]]}}" bindlongpress="__e"></image></view>
