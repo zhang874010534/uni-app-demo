@@ -28,6 +28,10 @@
             "path" : "pages/movie/movie",
             "style" : {}
         }
+        ,{
+            "path" : "pages/cover/cover",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

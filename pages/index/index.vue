@@ -3,7 +3,9 @@
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="swiper">
 			<swiper-item v-for="(item,i) in swiperList" :key="i">
-				<image :src="item.imgSrc" mode="aspectFill" class="swiper"></image>
+				<image :src="item.imgSrc" mode="aspectFill" class="swiper"
+				@click="previewSwiper(item.imgSrc)"
+				></image>
 			</swiper-item>
 		</swiper>
 		
@@ -19,7 +21,9 @@
 		<scroll-view scroll-x="true" class="page-block hot-swiper">
 			<view class="hot-movie-content" v-for="(item,i) in movieList" :key="i">
 				<view class="single-movie">
-					<image :src="item.imgSrc" class="single-movie-img"></image>
+					<image :src="item.imgSrc" class="single-movie-img"
+					@click="previewImage(item.imgSrc)"
+					></image>
 					<view class="movie-name">
 						{{item.name}}
 					</view>
@@ -142,6 +146,23 @@
 			this.refresh()
 		},
 		methods: {
+			//预览轮播图
+			previewSwiper(imgUrl){
+				uni.navigateTo({
+					url:"../cover/cover?imgUrl="+imgUrl
+				})
+			},
+			//预览热门电影
+			previewImage(current){
+				var arr=[];
+				this.movieList.forEach((item)=>{
+					arr.push(item.imgSrc)
+				})
+				uni.previewImage({
+					current:current,
+					urls:arr
+				})
+			},
 			refresh(){
 				uni.showLoading({
 					mask:true
