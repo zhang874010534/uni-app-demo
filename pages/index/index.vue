@@ -8,7 +8,6 @@
 				></image>
 			</swiper-item>
 		</swiper>
-		
 		<!--  热门电影 s -->
 		<view class="page-block hot-movie">
 			<view class="hot-wrapper">
@@ -144,6 +143,12 @@
 		},
 		onPullDownRefresh() {
 			this.refresh()
+		},
+		onShareAppMessage(res) {
+			return {
+				title: '电电狗',
+				path: '/pages/index/index'
+			};
 		},
 		methods: {
 			//预览轮播图

@@ -126,10 +126,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -139,16 +135,44 @@ var _default =
   },
   methods: {
     actionSheet: function actionSheet() {
+      var that = this;
       uni.showActionSheet({
-        itemList: ["下载", "分享", "你想干嘛就干嘛"] });
+        itemList: ['保存图片到本地', '分享', '你想干嘛就干嘛'],
+        success: function success(res) {
+          // console.log(res);
+          if (res.tapIndex == 0) {
+            uni.showLoading({
+              title: '图片保存中' });
+
+            uni.downloadFile({
+              url: that.imgUrl,
+              success: function success(res) {
+                //这是临时的文件路径
+                // console.log(res.tempFilePath);
+                uni.saveImageToPhotosAlbum({
+                  filePath: res.tempFilePath,
+                  success: function success() {
+                    uni.showToast({
+                      title: '保存成功',
+                      duration: 2000 });
+
+                  },
+                  complete: function complete() {
+                    uni.hideLoading();
+                  } });
+
+              } });
+
+          }
+        } });
 
     } },
 
   onLoad: function onLoad(option) {
     this.imgUrl = option.imgUrl;
     uni.setNavigationBarColor({
-      frontColor: "#fff",
-      backgroundColor: "#000" });
+      frontColor: '#fff',
+      backgroundColor: '#000' });
 
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

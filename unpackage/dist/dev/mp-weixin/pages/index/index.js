@@ -224,7 +224,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 {
   data: function data() {
     return {
@@ -277,6 +276,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   onPullDownRefresh: function onPullDownRefresh() {
     this.refresh();
+  },
+  onShareAppMessage: function onShareAppMessage(res) {
+    return {
+      title: '电电狗',
+      path: '/pages/index/index' };
+
   },
   methods: {
     //预览轮播图
