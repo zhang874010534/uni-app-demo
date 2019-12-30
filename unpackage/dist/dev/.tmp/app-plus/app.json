@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/regist/regist",
+    "pages/me/me",
+    "pages/meInfo/meInfo",
     "pages/index/index",
     "pages/search/search",
-    "pages/me/me",
     "pages/movie/movie",
     "pages/cover/cover"
   ],
@@ -45,6 +47,6 @@
     "autoclose": false
   },
   "appname": "电电狗电影",
-  "compilerVersion": "2.4.2",
+  "compilerVersion": "2.4.6",
   "usingComponents": {}
 }

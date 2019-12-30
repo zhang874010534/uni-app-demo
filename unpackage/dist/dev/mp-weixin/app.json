@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/regist/regist",
+    "pages/me/me",
+    "pages/meInfo/meInfo",
     "pages/index/index",
     "pages/search/search",
-    "pages/me/me",
     "pages/movie/movie",
     "pages/cover/cover"
   ],
@@ -39,6 +41,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap65.json"
+  "usingComponents": {}
 }

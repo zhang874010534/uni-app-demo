@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "电电狗",
-  "titleNView": false,
-  "usingComponents": {}
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "star": "/components/star"
+  }
 }

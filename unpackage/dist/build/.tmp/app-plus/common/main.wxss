@@ -14,7 +14,10 @@
 
 
 /*每个页面公共css */
-.container{
+.page{
 	background-color: #f7f7f7
+}
+.page-block{
+	background-color: #FFFFFF
 }
 

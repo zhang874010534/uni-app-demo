@@ -1,5 +1,5 @@
 <template>
-	<view class="page">
+	<view class="page" >
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="swiper">
 			<swiper-item v-for="(item,i) in swiperList" :key="i">
@@ -30,6 +30,7 @@
 				</view>
 			</view> 
 		</scroll-view>
+		
 		<!-- 热门电影 e -->
 		
 		
@@ -46,6 +47,8 @@
 			<video v-for="(item,i) in trailerList" :key="i" 
 			:src="item.video" controls
 			class="hot-trailer-single"
+			:id="'trailerVideo'+i"
+			@play="trailerPlay(i)"
 			>
 			</video>
 		</view>
@@ -121,7 +124,10 @@
 				method:'GET', 
 			    success: (res) => {
 			        this.swiperList=res.data.data;
-			    }
+			    },
+				fail(res) {
+					console.log(res);
+				}
 			});
 			// 热门电影
 			uni.request({
@@ -149,6 +155,20 @@
 				title: '电电狗',
 				path: '/pages/index/index'
 			};
+		},
+		onReady() {
+			
+		},
+		onHide() {
+			if(this.videoContext){
+				this.videoContext.pause()
+			}
+		},
+		onShow() {
+			if(this.videoContext){
+				this.videoContext.play()
+			}
+			
 		},
 		methods: {
 			//预览轮播图
@@ -187,6 +207,7 @@
 					}
 				});
 			},
+			//点赞
 			praise(i){
 				// step 可以传入一个跟 uni.createAnimation() 
 				// 一样的配置参数用于指定当前组动画的配置。
@@ -203,11 +224,21 @@
 					});
 					this.animationData[i]=this.animation.export();
 				}, 500);
+			},
+			//预告视频播放时触发 让其他正在播放的视频暂停
+			trailerPlay(index){
+				this.videoContext=uni.createVideoContext('trailerVideo'+index)
+				for (var i = 0; i < this.trailerList.length; i++) {
+					if(index!=i){
+						uni.createVideoContext('trailerVideo'+i).pause()
+					}
+				}
 			}
+			
 		},
 		components:{
 			star
-		}
+	  	}
 	}
 </script>
 

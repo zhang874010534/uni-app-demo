@@ -15,6 +15,7 @@ _vue.default.config.productionTip = false;
 
 _App.default.mpType = 'app';
 _vue.default.prototype.$defaultUrl = 'https://diandian.ngrok2.xiaomiqiu.cn';
+// Vue.prototype.$defaultUrl='http://localhost:2333'
 
 var app = new _vue.default(_objectSpread({},
 _App.default));

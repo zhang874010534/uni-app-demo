@@ -19,6 +19,7 @@
   },
   "permissions": {
     "OAuth": {},
+    "VideoPlayer": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -81,6 +82,9 @@
             "appid": "123",
             "appsecret": "123",
             "UniversalLinks": ""
+          },
+          "qq": {
+            "appid": "123"
           }
         },
         "audio": {
@@ -90,6 +94,7 @@
         }
       }
     },
+    "arguments": "{\"name\":\"\",\"path\":\"\",\"query\":\"\",\"id\":0}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#ffffff",
@@ -98,7 +103,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.4.2",
+      "compilerVersion": "2.4.6",
       "control": "v8",
       "nvueCompiler": "uni-app",
       "renderer": "auto",
@@ -131,11 +136,7 @@
           "selectedIconPath": "static/tabBarIcon/meS.png"
         }
       ],
-      "height": "50px",
-      "child": [
-        "lauchwebview"
-      ],
-      "selected": 0
+      "height": "50px"
     }
   }
 }

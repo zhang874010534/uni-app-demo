@@ -1,0 +1,1 @@
+<view class="movie-star"><block wx:for="{{starNum}}" wx:for-item="item" wx:for-index="i" wx:key="i"><image class="star-icon" src="../static/index/star.png"></image></block><block wx:for="{{grayNum}}" wx:for-item="item" wx:for-index="i" wx:key="i"><image class="star-icon" src="../static/index/star1.png"></image></block><view class="star-score">{{''+score+'分'}}</view></view>
