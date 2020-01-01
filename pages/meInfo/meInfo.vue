@@ -50,6 +50,7 @@
 			</view>
 		</view>
 		<!-- 底部结束 -->
+		<!--  -->
 	</view>
 </template>
 
@@ -79,12 +80,28 @@
 					itemList:['查看我的头像','从相册中选择上传'],
 					success(e) {
 						let index=e.tapIndex
+						//如果点击了查看头像
 						if(index==0){
 							let imgArr=[];
 							imgArr.push(that.userObj.avatarUrl)
 							uni.previewImage({
 								urls:imgArr,
 								current:imgArr[0]
+							})
+						}else if(index==1){
+							// uni.chooseImage({
+							// 	count:1,
+							// 	sizeType:['compressed'],
+							// 	sourceType:['album','camera'],
+							// 	success(e) {
+							// 		let temp=e.tempFilePaths[0];
+							// 		uni.navigateTo({
+							// 			url:'../cropper/cropper?temp='+temp
+							// 		})
+							// 	}
+							// })
+							uni.navigateTo({
+								url:'../cropper/cropper'
 							})
 						}
 					}

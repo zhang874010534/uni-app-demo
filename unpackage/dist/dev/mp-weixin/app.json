@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/regist/regist",
     "pages/me/me",
+    "pages/cropper/cropper",
+    "pages/meUploadImg/meUploadImg",
+    "pages/regist/regist",
     "pages/meInfo/meInfo",
     "pages/index/index",
     "pages/search/search",

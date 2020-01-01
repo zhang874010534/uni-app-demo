@@ -35,7 +35,6 @@
 					<image class="login-icon" src="../../static/me/qq.png" mode=""></image>
 				</button>
 				<!-- #endif -->
-				
 			</view>
 		</view>
 		<!-- 第三方登陆结束 -->
