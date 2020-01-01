@@ -387,11 +387,14 @@ var tabHeight = 70;var _default =
 
 
 
-          _this3.$emit("upload", {
-            avatar: _this3.imgSrc,
-            path: r,
-            index: _this3.indx });
+          uni.redirectTo({
+            url: '../meUploadImg/meUploadImg?temp=' + r });
 
+          // this.$emit("upload", {
+          // 	avatar: this.imgSrc,
+          // 	path: r,
+          // 	index: this.indx
+          // });
 
         },
         fail: function fail(res) {
@@ -520,11 +523,9 @@ var tabHeight = 70;var _default =
       this.target = null;
     },
     fClose: function fClose() {
-      this.styleDisplay = 'none';
-      this.styleTop = '-10000px';
-      this.hasSel = false;
-      this.fHideImg();
-      this.noBar || uni.showTabBar();
+      uni.navigateTo({
+        url: '../meInfo/meInfo' });
+
     },
     fStart: function fStart(e) {
       var touches = e.touches,

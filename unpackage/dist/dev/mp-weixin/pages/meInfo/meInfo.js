@@ -224,12 +224,18 @@ var _default =
             // 		})
             // 	}
             // })
-            uni.navigateTo({
+            uni.redirectTo({
               url: '../cropper/cropper' });
 
           }
         } });
 
+    },
+    //上传返回图片
+    myUpload: function myUpload(rsp) {
+      var self = this;
+      self.imgurl = rsp.path; //更新头像方式一
+      // rsp.avatar.imgSrc = rsp.path; //更新头像方式二
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

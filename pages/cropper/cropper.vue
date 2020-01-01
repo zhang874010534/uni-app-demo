@@ -237,13 +237,13 @@
 										quality: this.qlty,
 										success: (r) => {
 											r = r.tempFilePath;
-											this.btop(r).then((r) => {
-												this.$emit("upload", {
-													avatar: this.imgSrc,
-													path: r,
-													index: this.indx
-												});
-											});
+											// this.btop(r).then((r) => {
+											// 	this.$emit("upload", {
+											// 		avatar: this.imgSrc,
+											// 		path: r,
+											// 		index: this.indx
+											// 	});
+											// });
 										},
 										fail: () => {
 											uni.showToast({
@@ -263,11 +263,14 @@
 						})
 						// #endif
 						// #ifndef H5
-						this.$emit("upload", {
-							avatar: this.imgSrc,
-							path: r,
-							index: this.indx
-						});
+						uni.redirectTo({
+							url:'../meUploadImg/meUploadImg?temp='+r
+						})
+						// this.$emit("upload", {
+						// 	avatar: this.imgSrc,
+						// 	path: r,
+						// 	index: this.indx
+						// });
 						// #endif
 					},
 					fail: (res) => {
@@ -396,11 +399,9 @@
 				this.target = null;
 			},
 			fClose() {
-				this.styleDisplay = 'none';
-				this.styleTop = '-10000px';
-				this.hasSel = false;
-				this.fHideImg();
-				this.noBar || uni.showTabBar();
+				uni.navigateTo({
+					url:'../meInfo/meInfo'
+				})
 			},
 			fStart(e) {
 				let touches = e.touches,

@@ -63,7 +63,7 @@ export default {
 		},
 		wxLogin(e){
 			let userInfo=e.detail.userInfo
-			// console.log(e);
+			console.log(e);
 			uni.login({
 				provider:'weixin',
 				success(response) {
@@ -71,7 +71,7 @@ export default {
 					let userObj = {
 						username: userInfo.nickName,
 						id: code.slice(0,10),
-						avatarUrl:"https://wx.qlogo.cn/mmopen/vi_32/cg5IPoC7ibxtrx5ia19aeUJh2amoIC9AaCwUrHF3C5qjePBpia0n3tjAB2SUkAqSh48LBWjjDsNIGGIDA5iaS8Locw/132"
+						avatarUrl:userInfo.avatarUrl
 					};
 					uni.setStorageSync('userLogin', userObj);
 					uni.switchTab({

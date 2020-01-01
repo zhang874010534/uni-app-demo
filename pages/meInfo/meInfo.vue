@@ -50,7 +50,7 @@
 			</view>
 		</view>
 		<!-- 底部结束 -->
-		<!--  -->
+		
 	</view>
 </template>
 
@@ -100,14 +100,21 @@
 							// 		})
 							// 	}
 							// })
-							uni.navigateTo({
+							uni.redirectTo({
 								url:'../cropper/cropper'
 							})
 						}
 					}
 				})
-			}
+			},
+			//上传返回图片
+			myUpload(rsp) {
+			  const self = this;
+			  self.imgurl = rsp.path; //更新头像方式一
+			  // rsp.avatar.imgSrc = rsp.path; //更新头像方式二
+			},
 		}
+	
 	}
 </script>
 

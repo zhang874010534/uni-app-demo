@@ -22,47 +22,59 @@ export default {
 	methods: {
 		Reselect() {
 			let that=this
-			uni.chooseImage({
-				count: 1, //默认9
-				sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
-				sourceType: ['album','camera'], //从相册选择
-				success: function(res) {
-					that.tempImgUrl=res.tempFilePaths[0]
-				}
-			});
+			uni.redirectTo({
+				url:'../cropper/cropper'
+			})
 		},
 		upload(){
 			uni.showLoading({
 				mask:true,
 				title:'上传中，请稍候'
 			})
-			uni.uploadFile({
-				url:'11',
-				filePath:this.tempImgUrl,
-				name:'file',
-				// 将id和token传回后端 证明身份 这里是假的
-				header:{
-					headerId:'id',
-					headerToken:'token'
-				},
-				success(res) {
-					uni.showToast({
-						title:'上传成功'
+			uni.showToast({
+				title:'上传成功'
+			})
+			let obj=uni.getStorageSync('userLogin')
+			obj.avatarUrl=this.tempImgUrl
+			uni.setStorage({
+				key:'userLogin',
+				data:obj,
+				success() {
+					uni.redirectTo({
+						url:'../meInfo/meInfo'
 					})
-				},
-				fail() {
-					uni.showToast({
-						icon:'loading',
-						title:'上传失败'
-					})
-				},
-				complete(){
-					uni.hideLoading()
 				}
 			})
+			// uni.uploadFile({
+			// 	url:'11',
+			// 	filePath:this.tempImgUrl,
+			// 	name:'file',
+			// 	// 将id和token传回后端 证明身份 这里是假的
+			// 	header:{
+			// 		headerId:'id',
+			// 		headerToken:'token'
+			// 	},
+			// 	success(res) {
+			// 		uni.showToast({
+			// 			title:'上传成功'
+			// 		})
+			// 		let obj=uni.getStorageSync('userLogin')
+			// 		console.log(this.tempImgUrl)
+			// 		obj.avatarUrl=this.tempImgUrl
+			// 	},
+			// 	fail() {
+			// 		uni.showToast({
+			// 			icon:'loading',
+			// 			title:'上传失败'
+			// 		})
+			// 	},
+			// 	complete(){
+			// 		uni.hideLoading()
+			// 	}
+			// })
 		}
 	}
-};
+}
 </script>
 
 <style lang="scss">
