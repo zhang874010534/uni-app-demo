@@ -10,7 +10,7 @@
 				<image class="arrow" src="../../static/meInfo/arrow.png" mode=""></image>
 			</view>
 			<!-- 昵称 -->
-			<view class="single-header">
+			<view class="single-header" v-on:click="changeNickname">
 				<view class="words">
 					昵称
 				</view>
@@ -20,32 +20,32 @@
 				<image class="arrow" src="../../static/meInfo/arrow.png" mode=""></image>
 			</view>
 			<!-- 生日 -->
-			<view class="single-header">
+			<view class="single-header" @click="changeBirthday">
 				<view class="words">
 					生日
 				</view>
 				<view class="right-words">
-					2222-01-01
+					{{birthday}}
 				</view>
 				<image class="arrow" src="../../static/meInfo/arrow.png" mode=""></image>
 			</view>
 			<!-- 性别 -->
-			<view class="single-header clear-bottom">
+			<view class="single-header clear-bottom" @click="changeSex">
 				<view class="words">
 					性别
 				</view>
 				<view class="right-words">
-					男
+					{{sex}}
 				</view>
 				<image class="arrow" src="../../static/meInfo/arrow.png" mode=""></image>
 			</view>
 		</view>
 		<!-- 底部开始 -->
 		<view class="footer">
-			<view class="footer-words" @click="clearStorage">
+			<view class="footer-words">
 				清理缓存
 			</view>
-			<view class="footer-words">
+			<view class="footer-words"  @click="clearStorage">
 				退出登录
 			</view>
 		</view>
@@ -58,20 +58,27 @@
 	export default {
 		data() {
 			return {
-				userObj:{}
+				userObj:{},
+				birthday:'',
+				sex:''
 			};
 		},
 		onShow(){
 			this.userObj=uni.getStorageSync('userLogin')
+			this.birthday=this.userObj.birthday
+			this.sex=this.userObj.sex
 		},
 		methods:{
 			clearStorage(){
 				uni.clearStorage()
 				uni.showLoading({
-					title:'清理中'
+					title:'退出中'
 				})
 				setTimeout(function () {
 				    uni.hideLoading();
+					uni.navigateBack({
+						delta:1
+					})
 				}, 1500);
 			},
 			operator(){
@@ -113,6 +120,24 @@
 			  self.imgurl = rsp.path; //更新头像方式一
 			  // rsp.avatar.imgSrc = rsp.path; //更新头像方式二
 			},
+			//修改昵称
+			changeNickname(){
+				uni.navigateTo({
+					url:'../changeNickname/changeNickname'
+				})
+			},
+			//修改生日
+			changeBirthday(){
+				uni.navigateTo({
+					url:'../changeBirthday/changeBirthday'
+				})
+			},
+			//修改性别
+			changeSex(){
+				uni.navigateTo({
+					url:'../changeSex/changeSex'
+				})
+			}
 		}
 	
 	}

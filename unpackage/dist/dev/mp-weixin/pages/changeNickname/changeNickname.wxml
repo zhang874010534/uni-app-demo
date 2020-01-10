@@ -1,0 +1,1 @@
+<view class="page"><form data-event-opts="{{[['submit',[['changeNickname',['$event']]]]]}}" bindsubmit="__e"><view class="inputView"><input class="input" type="text" name="nickname" placeholder="请输入昵称" placeholder-style="color:#808080" value="{{userLogin.username}}"/></view><button class="button" type="primary" form-type="submit">Submit</button></form></view>

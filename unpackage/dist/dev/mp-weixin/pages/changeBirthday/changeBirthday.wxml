@@ -1,0 +1,1 @@
+<view class="page"><form data-event-opts="{{[['submit',[['submitBirthday',['$event']]]]]}}" bindsubmit="__e"><view class="inputView"><picker mode="date" data-event-opts="{{[['change',[['changeBirthday',['$event']]]]]}}" bindchange="__e"><view class="birthday">{{birthday}}</view></picker></view><button class="button" type="primary" form-type="submit">Submit</button></form></view>

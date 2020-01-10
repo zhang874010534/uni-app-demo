@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7117,7 +7117,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7138,14 +7138,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7221,7 +7221,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7630,9 +7630,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!**************************************************!*\
-  !*** E:/study/黑马/资料/uni-app 7端/电电狗电影/pages.json ***!
-  \**************************************************/
+/*!***********************************************!*\
+  !*** E:/study/黑马/项目/uni-app/电电狗电影/pages.json ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8539,43 +8539,19 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 
 /***/ }),
 
-/***/ 7:
-/*!*******************************************************************!*\
-  !*** E:/study/黑马/资料/uni-app 7端/电电狗电影/pages.json?{"type":"style"} ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/me/me": { "navigationBarTextStyle": "white", "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#FFD350" }, "pages/cropper/cropper": {}, "pages/meUploadImg/meUploadImg": { "navigationBarTextStyle": "white", "navigationBarTitleText": "头像上传", "navigationBarBackgroundColor": "#000" }, "pages/regist/regist": { "navigationBarTitleText": "注册/登录" }, "pages/meInfo/meInfo": { "navigationBarTextStyle": "white", "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#FFD350" }, "pages/index/index": { "navigationBarTitleText": "电电狗", "enablePullDownRefresh": true }, "pages/search/search": { "navigationBarTitleText": "搜索" }, "pages/movie/movie": {}, "pages/cover/cover": {} }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "电电狗", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
-
-/***/ }),
-
-/***/ 8:
-/*!******************************************************************!*\
-  !*** E:/study/黑马/资料/uni-app 7端/电电狗电影/pages.json?{"type":"stat"} ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__D9911EA" };exports.default = _default;
-
-/***/ }),
-
-/***/ 90:
+/***/ 61:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 91);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 62);
 
 
 /***/ }),
 
-/***/ 91:
+/***/ 62:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -8606,7 +8582,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 92);
+module.exports = __webpack_require__(/*! ./runtime */ 63);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -8623,7 +8599,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 92:
+/***/ 63:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -9352,6 +9328,30 @@ if (hadRuntime) {
   })() || Function("return this")()
 );
 
+
+/***/ }),
+
+/***/ 7:
+/*!****************************************************************!*\
+  !*** E:/study/黑马/项目/uni-app/电电狗电影/pages.json?{"type":"style"} ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "电电狗", "enablePullDownRefresh": true }, "pages/me/me": { "navigationBarTextStyle": "white", "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#FFD350" }, "pages/changeSex/changeSex": { "navigationBarTextStyle": "white", "navigationBarTitleText": "性别", "navigationBarBackgroundColor": "#FFD350" }, "pages/changeNickname/changeNickname": { "navigationBarTextStyle": "white", "navigationBarTitleText": "修改昵称", "navigationBarBackgroundColor": "#FFD350" }, "pages/meInfo/meInfo": { "navigationBarTextStyle": "white", "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#FFD350" }, "pages/cropper/cropper": {}, "pages/meUploadImg/meUploadImg": { "navigationBarTextStyle": "white", "navigationBarTitleText": "头像上传", "navigationBarBackgroundColor": "#000" }, "pages/regist/regist": { "navigationBarTitleText": "注册/登录" }, "pages/search/search": { "navigationBarTitleText": "搜索" }, "pages/movie/movie": {}, "pages/cover/cover": {}, "pages/changeBirthday/changeBirthday": {} }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "电电狗", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+
+/***/ }),
+
+/***/ 8:
+/*!***************************************************************!*\
+  !*** E:/study/黑马/项目/uni-app/电电狗电影/pages.json?{"type":"stat"} ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__D9911EA" };exports.default = _default;
 
 /***/ })
 

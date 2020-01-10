@@ -1,0 +1,1 @@
+.radioSex{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;background-color:#fff}.radioSex .radio{padding:20rpx 10rpx}.button{width:70%;margin-top:30rpx}

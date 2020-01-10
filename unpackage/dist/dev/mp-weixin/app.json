@@ -1,14 +1,17 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/me/me",
+    "pages/changeSex/changeSex",
+    "pages/changeNickname/changeNickname",
+    "pages/meInfo/meInfo",
     "pages/cropper/cropper",
     "pages/meUploadImg/meUploadImg",
     "pages/regist/regist",
-    "pages/meInfo/meInfo",
-    "pages/index/index",
     "pages/search/search",
     "pages/movie/movie",
-    "pages/cover/cover"
+    "pages/cover/cover",
+    "pages/changeBirthday/changeBirthday"
   ],
   "subPackages": [],
   "window": {
@@ -43,5 +46,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap28.json"
 }

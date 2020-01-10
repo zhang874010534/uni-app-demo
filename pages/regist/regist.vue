@@ -53,7 +53,9 @@ export default {
 			let userObj = {
 				username: username,
 				password: password,
-				id: '123ddg666'
+				id: '123ddg666',
+				sex:'未选择',
+				birthday:'2022-02-02',
 			};
 			//用同步也没啥关系
 			uni.setStorageSync('userLogin', userObj);
@@ -71,7 +73,9 @@ export default {
 					let userObj = {
 						username: userInfo.nickName,
 						id: code.slice(0,10),
-						avatarUrl:userInfo.avatarUrl
+						avatarUrl:userInfo.avatarUrl,
+						birthday:'2022-02-02',
+						sex:'未选择'
 					};
 					uni.setStorageSync('userLogin', userObj);
 					uni.switchTab({
